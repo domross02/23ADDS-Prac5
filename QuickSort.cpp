@@ -34,8 +34,10 @@ std::vector<int> QuickSort::sort(std::vector<int> list){
 
         std::vector<int> out1(list.begin(), list.begin()+(pivotindex));
         std::vector<int> out2(list.begin()+(pivotindex+1),list.begin()+(list.size()));
-        std::vector<int> output = sort(out1);
+        std::vector<int> sortout1 = sort(out1);
         std::vector<int> sortout2 = sort(out2);
+        std::vector<int> output;
+        output.insert(output.end(), sortout1.begin(),sortout1.end());
         output.push_back(list.at(pivotindex));
         output.insert(output.end(),sortout2.begin(),sortout2.end());
         return output;

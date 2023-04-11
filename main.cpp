@@ -6,11 +6,13 @@
 #include "RecursiveBinarySearch.h"
 using namespace std;
 int main(){
-    QuickSort s;
-    vector<int> input;
-    int num;
     
-
+   vector<int> input; //{ 0, 3, 5, 4, -5, 100, 7777, 2014 };
+    QuickSort s;
+    
+    
+   
+    int num;
     while((cin>>num)){
         
        input.push_back(num);
@@ -19,23 +21,24 @@ int main(){
         break;
        }
     }
-       //{ 1, 3, 5, 4, -5, 100, 7777, 2014 };
+    vector<int> sorted=s.sort(input);
    
-    vector<int> sorted = s.sort(input);
+    
     RecursiveBinarySearch b;
+   
     string out;
-    if(b.search(sorted, 1)==1){
+    bool result = b.search(sorted,1);
+    if(result==1){
         out = "true";
     }
     else{
         out = "false";
     }
-   
-    cout<<" "<<out;
-
-    for(int i=0; i<sorted.size();i++){
-        cout<<" "<<sorted.at(i);
+    cout<<out;
+   for(int i=0; i<sorted.size();i++){
+        std::cout<<" "<<sorted.at(i);
     }
     cout<<endl;
+  
 
 }
