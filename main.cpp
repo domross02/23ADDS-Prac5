@@ -31,7 +31,7 @@ int main(){
         out = "false";
     }
    
-    cout<<out;
+    cout<<" "<<out;
 
     for(int i=0; i<sorted.size();i++){
         cout<<" "<<sorted.at(i);
